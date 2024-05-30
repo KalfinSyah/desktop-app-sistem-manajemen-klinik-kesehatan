@@ -8,13 +8,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kalfi
  */
-public class HistoryPelayanan extends javax.swing.JFrame {
+public class HistoryPertemuan extends javax.swing.JFrame {
     private Connection connection;
     
-    public HistoryPelayanan(Connection connection) {
+    public HistoryPertemuan(Connection connection) {
         initComponents();
         this.connection = connection;
-        setTitle("HISTORY PELAYANAN");
+        setTitle("HISTORY PERTEMUAN");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -22,7 +22,7 @@ public class HistoryPelayanan extends javax.swing.JFrame {
         
         populateTable();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,20 +42,20 @@ public class HistoryPelayanan extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "WAKU PEMBERIAN OBAT", "ID PASIEN", "NAMA PASIEN", "KELUHAN", "ID OBAT", "NAMA OBAT", "HARGA OBAT", "UANG PASIEN", "KEMBALIAN", "BPJS"
+                "MULAI", "SELESAI", "ID PASIEN", "NAMA PASIEN", "ID DOKTER", "NAMA DOKTER"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -75,10 +75,10 @@ public class HistoryPelayanan extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -98,28 +98,23 @@ public class HistoryPelayanan extends javax.swing.JFrame {
         dispose();
         new MainMenu(this.connection);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     private void populateTable() {
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM history ORDER BY waktupemberian");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM history_pertemuan ORDER BY mulai");
 
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
 
             while (resultSet.next()) {
                 Object[] row = {
-                    resultSet.getString("waktupemberian"),
+                    resultSet.getString("mulai"),
+                    resultSet.getString("selesai"),
                     resultSet.getInt("idpasien"),
                     resultSet.getString("namapasien"),
-                    resultSet.getString("keluhan"),
-                    resultSet.getInt("idobat"),
-                    resultSet.getString("namaobat"),
-                    resultSet.getFloat("hargaobat"),
-                    resultSet.getFloat("uangpasien"),
-                    resultSet.getFloat("kembalian"),
-                    resultSet.getString("bpjs"),
-
+                    resultSet.getInt("iddokter"),
+                    resultSet.getString("namadokter")
                 };
                 model.addRow(row);
             }

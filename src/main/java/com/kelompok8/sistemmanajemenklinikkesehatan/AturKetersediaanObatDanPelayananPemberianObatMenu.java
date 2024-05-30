@@ -38,13 +38,17 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner3 = new javax.swing.JSpinner();
         jFrame2 = new javax.swing.JFrame();
-        jTextField5 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jSpinner2 = new javax.swing.JSpinner();
+        jSpinner4 = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -53,12 +57,10 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSpinner5 = new javax.swing.JSpinner();
 
         jLabel1.setText("NAMA OBAT");
 
@@ -77,11 +79,7 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
+        jLabel9.setText("HARGA");
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -95,10 +93,14 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                            .addComponent(jSpinner3))))
                 .addContainerGap())
         );
         jFrame1Layout.setVerticalGroup(
@@ -110,18 +112,16 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
 
         jLabel5.setText("NAMA OBAT");
 
@@ -140,6 +140,8 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             }
         });
 
+        jLabel8.setText("HARGA");
+
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
         jFrame2.getContentPane().setLayout(jFrame2Layout);
         jFrame2Layout.setHorizontalGroup(
@@ -152,10 +154,14 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                         .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jFrame2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame2Layout.createSequentialGroup()
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSpinner2, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                            .addComponent(jSpinner4))))
                 .addContainerGap())
         );
         jFrame2Layout.setVerticalGroup(
@@ -167,11 +173,15 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jButton7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -206,20 +216,20 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "NAMA OBAT", "STOK"
+                "ID", "NAMA OBAT", "STOK", "HARGA/STOK"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -230,24 +240,25 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                 return canEdit [columnIndex];
             }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "NAMA PASIEN", "KELUHAN"
+                "ID", "NAMA PASIEN", "KELUHAN", "BPJS"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -258,13 +269,14 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                 return canEdit [columnIndex];
             }
         });
+        jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel2.setText("PILIH ID OBAT");
+        jLabel10.setText("TABEL PASIEN YANG SUDAH BERTEMU DOKTER TETAPI BELUM DIBERI OBAT");
 
-        jLabel3.setText("PILIH ID PASIEN");
+        jLabel11.setText("TABEL OBAT");
 
-        jLabel7.setText("PILIH ID OBAT UNTUK DI UPDATE");
+        jLabel14.setText("JUMLAH UANG PENERIMA OBAT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -272,31 +284,23 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                .addGap(6, 6, 6))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField2))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(461, 461, 461)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSpinner5)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -307,21 +311,17 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,62 +346,73 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            int idToUpdate = Integer.parseInt(jTextField7.getText());  
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM obat WHERE id = ?");
-            statement.setInt(1, idToUpdate);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Klik pada obat yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             
-            ResultSet resultSet = statement.executeQuery();
+            int idObat = (Integer) model.getValueAt(selectedRow, 0);
+            String query = "SELECT * FROM obat WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, idObat);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                jFrame2.setVisible(true);
-                jFrame2.setLocationRelativeTo(this);
-                jFrame2.setResizable(false);
-                jFrame2.pack();
                 jTextField6.setText(resultSet.getString("namaobat"));
-                jTextField5.setText(Integer.toString(resultSet.getInt("stok")));
-            } else {
-                JOptionPane.showMessageDialog(this, "Gagal update obat!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                jSpinner4.setValue(resultSet.getInt("stok"));
+                jSpinner2.setValue(resultSet.getInt("harga"));
             }
 
-            statement.close();
             resultSet.close();
+            preparedStatement.close();
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Gagal update obat!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
-        }       
+        }
+        
+        jFrame2.setVisible(true);
+        jFrame2.setLocationRelativeTo(this);
+        jFrame2.setResizable(false);
+        jFrame2.pack();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
-            int idObat = Integer.parseInt(jTextField3.getText());
-            int idPasien = Integer.parseInt(jTextField2.getText());
-
-            String checkStockSQL = "SELECT * FROM obat WHERE id = ?";
-            String checkPasienSQL = "SELECT * FROM datapasien WHERE id = ?";
-            
-            PreparedStatement checkStockStatement = connection.prepareStatement(checkStockSQL);
-            PreparedStatement checkPasienStatement = connection.prepareStatement(checkPasienSQL);
-            checkStockStatement.setInt(1, idObat);
-            checkPasienStatement.setInt(1, idPasien);
-            ResultSet resultSetStock = checkStockStatement.executeQuery();
-            ResultSet resultSetPasien = checkPasienStatement.executeQuery();
-            
-            if (!resultSetStock.next() || !resultSetPasien.next()) {
-                resultSetStock.close();
-                resultSetPasien.close();
-                checkStockStatement.close();
-                checkPasienStatement.close();
-                JOptionPane.showMessageDialog(this, "Pasien/Obat tidak ditemukan", "ERROR", JOptionPane.ERROR_MESSAGE);
+            DefaultTableModel modelT1 = (DefaultTableModel) jTable1.getModel();
+            DefaultTableModel modelT2 = (DefaultTableModel) jTable2.getModel();
+            int selectedObatRow = jTable1.getSelectedRow();
+            int selectedPasienRow = jTable2.getSelectedRow();
+            if (selectedObatRow == -1) {
+                JOptionPane.showMessageDialog(this, "Klik pada obat yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+            if (selectedPasienRow == -1) {
+                JOptionPane.showMessageDialog(this, "Klik pada pasien yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;                
+            }
+            int idObat = (Integer) modelT1.getValueAt(selectedObatRow, 0);
+            String namaObat = (String) modelT1.getValueAt(selectedObatRow, 1);
+            int stok = (Integer) modelT1.getValueAt(selectedObatRow, 2);
+            int hargaObat = (Integer) modelT1.getValueAt(selectedObatRow, 3);
+            int uangPasien = (Integer) jSpinner5.getValue();
+            int idPasien = (Integer) modelT2.getValueAt(selectedPasienRow, 0);
+            String namaPasien = (String) modelT2.getValueAt(selectedPasienRow, 1);            
+            String keluhan = (String) modelT2.getValueAt(selectedPasienRow, 2);            
+            String bpjs = (String) modelT2.getValueAt(selectedPasienRow, 3);
+
             
-            if (resultSetStock.getInt("stok") <= 0) {
-                resultSetStock.close();
-                resultSetPasien.close();
-                checkStockStatement.close();
-                checkPasienStatement.close();                
+            if (stok <= 0){
                 JOptionPane.showMessageDialog(this, "Stok obat kosong!", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
+            }
+            if (bpjs.equals("TIDAK")) {
+                if (uangPasien < hargaObat) { 
+                    JOptionPane.showMessageDialog(this, "Uang pasien kurang : Rp."+(hargaObat-uangPasien), "ERROR", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+            } else {
+                hargaObat = 0;
             }
 
             // Update obat
@@ -411,30 +422,43 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             int obatRowsUpdated = updateObatStatement.executeUpdate();
             if (obatRowsUpdated > 0) {
                 // catat di history
-                String historySQL = "INSERT INTO history (idpasien, namapasien, keluhan, idobat, namaobat, waktupemberian) VALUES (?, ?, ?, ?, ?, ?)";
+                String historySQL = "INSERT INTO history (idpasien, namapasien, keluhan, idobat, namaobat, waktupemberian, hargaobat, uangpasien, kembalian, bpjs) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement insertToHistoryStatement = connection.prepareStatement(historySQL);
-                insertToHistoryStatement.setInt(1, resultSetPasien.getInt("id"));
-                insertToHistoryStatement.setString(2, resultSetPasien.getString("namapasien"));
-                insertToHistoryStatement.setString(3, resultSetPasien.getString("keluhan"));
-                insertToHistoryStatement.setInt(4, resultSetStock.getInt("id"));
-                insertToHistoryStatement.setString(5, resultSetStock.getString("namaobat"));
+                insertToHistoryStatement.setInt(1, idPasien);
+                insertToHistoryStatement.setString(2, namaPasien);
+                insertToHistoryStatement.setString(3, keluhan);
+                insertToHistoryStatement.setInt(4, idObat);
+                insertToHistoryStatement.setString(5, namaObat);
                 insertToHistoryStatement.setTimestamp(6, Timestamp.valueOf(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
+                insertToHistoryStatement.setFloat(7, hargaObat);
+                insertToHistoryStatement.setFloat(8, uangPasien);
+                insertToHistoryStatement.setFloat(9, uangPasien - hargaObat);
+                insertToHistoryStatement.setString(10, bpjs);
+
                 int historyUpdated = insertToHistoryStatement.executeUpdate();
                 if (historyUpdated > 0) {
-                    JOptionPane.showMessageDialog(this, "Pelayanan pemberian obat berhasil!\nTercatat di history pelayanan." , "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    String updateStatusSQL = "UPDATE datapasien SET status_pemberian_obat = 'sudah' WHERE id = ?";
+                    PreparedStatement updateStatusStatement = connection.prepareStatement(updateStatusSQL);
+                    updateStatusStatement.setInt(1, idPasien);
+                    int statusRowsUpdated = updateStatusStatement.executeUpdate();
+                    if (statusRowsUpdated > 0) {
+                        JOptionPane.showMessageDialog(this, "Pelayanan pemberian obat berhasil!"
+                                                            + "\nTercatat di history pelayanan."
+                                                            + "\nUang Pasien           : Rp." + uangPasien
+                                                            + "\nHarga Obat            : Rp." + hargaObat
+                                                            + "\nKembalian uang pasien : Rp." + (uangPasien - hargaObat) , "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Terjadi error saat mengupdate status pemberian obat!" , "ERROR", JOptionPane.ERROR_MESSAGE);
+                    }
+                    updateStatusStatement.close();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Terjadi error!" , "ERROR", JOptionPane.ERROR_MESSAGE);                    
+                    JOptionPane.showMessageDialog(this, "Terjadi error saat menulis history!" , "ERROR", JOptionPane.ERROR_MESSAGE);                    
                 }
                 insertToHistoryStatement.close();
             } else {
-                JOptionPane.showMessageDialog(this, "Terjadi error!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Terjadi error saat mengurangi stock obat!", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
 
-            
-            resultSetStock.close();
-            resultSetPasien.close();
-            checkStockStatement.close();
-            checkPasienStatement.close(); 
             updateObatStatement.close();
             populateTableObat();
             populateTablePasien();
@@ -447,14 +471,17 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         try {
             String namaObat = jTextField1.getText();
-            String stok = jTextField4.getText();
+            int stok = (Integer) jSpinner3.getValue();
+            int harga = (Integer) jSpinner1.getValue();
 
-            String sql = "INSERT INTO obat (namaobat, stok) VALUES (?, ?)";
+            String sql = "INSERT INTO obat (namaobat, stok, harga) VALUES (?, ?, ?)";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, namaObat);
-            statement.setInt(2, Integer.parseInt(stok));
+            statement.setInt(2, stok);
+            statement.setInt(3, harga);
 
+            
             int rowsInserted = statement.executeUpdate();
 
             if (rowsInserted > 0) {
@@ -466,7 +493,7 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             statement.close();
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Gagal menambahkan obat!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Terjadi error!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         
         populateTableObat();
@@ -477,25 +504,25 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         try {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(this, "Klik pada obat yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int idObat = (Integer) model.getValueAt(selectedRow, 0);
             String namaObat = jTextField6.getText();
-            int stok = Integer.parseInt(jTextField5.getText());
-
-            String sql = "UPDATE obat SET namaobat = ?, stok = ? WHERE id = ?";
+            int stok = (Integer)jSpinner4.getValue();
+            int harga = (Integer)jSpinner2.getValue();
+            String sql = "UPDATE obat SET namaobat = ?, stok = ?, harga = ? WHERE id = ?";
 
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, namaObat);
             statement.setInt(2, stok);
-            statement.setInt(3, Integer.parseInt(jTextField7.getText()));
+            statement.setInt(3, harga);
+            statement.setInt(4, idObat);
 
             int rowsInserted = statement.executeUpdate();
 
@@ -508,7 +535,7 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
             statement.close();
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Gagal update data obat!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Terjadi error!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
         populateTableObat();
         jFrame2.dispose();
@@ -531,6 +558,7 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                     resultSet.getInt("id"),
                     resultSet.getString("namaobat"),
                     resultSet.getInt("stok"),
+                    resultSet.getInt("harga")
                 };
                 model.addRow(row);
             }
@@ -546,7 +574,7 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
     private void populateTablePasien() {
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT id, namapasien, keluhan FROM datapasien ORDER BY id");
+            ResultSet resultSet = statement.executeQuery("SELECT id, namapasien, keluhan, bpjs FROM datapasien WHERE status_pemberian_obat = 'belum' AND status_pertemuan_dengan_dokter='sudah' ORDER BY id");
 
             DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
             model.setRowCount(0);
@@ -555,7 +583,8 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
                 Object[] row = {
                     resultSet.getInt("id"),
                     resultSet.getString("namapasien"),
-                    resultSet.getString("keluhan")
+                    resultSet.getString("keluhan"),
+                    resultSet.getString("bpjs")
                 };
                 model.addRow(row);
             }
@@ -575,22 +604,24 @@ public class AturKetersediaanObatDanPelayananPemberianObatMenu extends javax.swi
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JSpinner jSpinner4;
+    private javax.swing.JSpinner jSpinner5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

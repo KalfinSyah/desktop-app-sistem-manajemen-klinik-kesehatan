@@ -15,10 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private Connection connection;
-    private int idDokter;
-    private int idPasien;
 
-    
     public AturJadwalPertemuanMenu(Connection connection) {
         initComponents();
         this.connection = connection;
@@ -40,14 +37,10 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         jButton5 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
         jFrame2 = new javax.swing.JFrame();
-        jLabel5 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -62,17 +55,14 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jButton5.setText("PILIH");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
-            }
-        });
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
             }
         });
 
@@ -102,9 +92,8 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable3.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jTable3);
-
-        jLabel4.setText("PILIH ID KE");
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -114,39 +103,23 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                    .addGroup(jFrame1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jFrame1Layout.setVerticalGroup(
             jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                .addComponent(jButton5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jLabel5.setText("PILIH ID KE");
-
         jButton6.setText("PILIH");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
-            }
-        });
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
             }
         });
 
@@ -176,6 +149,7 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable4.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTable4);
 
         javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
@@ -185,24 +159,16 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
             .addGroup(jFrame2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
-                    .addGroup(jFrame2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jFrame2Layout.setVerticalGroup(
             jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6))
-                .addGap(18, 18, 18)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -235,6 +201,7 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("PILIH DOKTER");
@@ -285,6 +252,17 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
 
         jLabel6.setText("SET WAKTU SELESAI");
 
+        jButton7.setText("SELESAI");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("()");
+
+        jLabel5.setText("()");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -301,14 +279,21 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                             .addComponent(jTextField4)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel4))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel5))
                                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -316,16 +301,22 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -360,61 +351,32 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jFrame1.dispose();
-        
-        try {
-            int id = Integer.parseInt(jTextField2.getText());            
-            this.idDokter = id;
-            String query = "SELECT namadokter FROM datadokter WHERE id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            if(resultSet.next()) {
-                jLabel1.setText(resultSet.getString("namadokter"));
-            } else {
-                jLabel1.setText("Dokter tidak ditemukan");
-            }
-            resultSet.close();
-            preparedStatement.close();
-        } catch (Exception e) {
-            jLabel1.setText("Dokter tidak ditemukan");
-            e.printStackTrace();
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        int selectedRow = jTable3.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Klik pada dokter yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        int idDokter = (Integer) model.getValueAt(selectedRow, 0);
+        String namaDokter = (String) model.getValueAt(selectedRow, 1);
+        jLabel4.setText(String.valueOf(idDokter));     
+        jLabel1.setText(namaDokter);
+        jFrame1.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        jFrame2.dispose();
-        
-        try {
-            int id = Integer.parseInt(jTextField3.getText());
-            this.idPasien = id;
-            String query = "SELECT namapasien FROM datapasien WHERE id = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            if(resultSet.next()) {
-                jLabel2.setText(resultSet.getString("namapasien"));
-            } else {
-                jLabel2.setText("Pasien tidak ditemukan");
-            }
-            
-            resultSet.close();
-            preparedStatement.close();
-        } catch (Exception e) {
-            jLabel2.setText("Pasien tidak ditemukan");
-            e.printStackTrace();
+        DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
+        int selectedRow = jTable4.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Klik pada pasien yang ingin dipilih!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        int idPasien = (Integer) model.getValueAt(selectedRow, 0);
+        String namaPasien = (String) model.getValueAt(selectedRow, 1);
+        jLabel5.setText(String.valueOf(idPasien));     
+        jLabel2.setText(namaPasien);
+        jFrame2.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         dispose();
@@ -423,19 +385,20 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            // Check if the doctor is available during the specified time range
-            if (isDoctorAvailable(this.idDokter, jTextField1.getText(), jTextField4.getText())) {
-                String sql = "INSERT INTO jadwalpertemuan (iddokter, namadokter, idpasien, namapasien, mulai, selesai) VALUES (?, ?, ?, ?, ?, ?)";
+            if (isDoctorAvailable(Integer.parseInt(jLabel4.getText()), jTextField1.getText(), jTextField4.getText())) {
+                String sql = "INSERT INTO jadwalpertemuan (iddokter, idpasien, mulai, selesai) VALUES (?, ?, ?, ?)";
                 PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setInt(1, this.idDokter);
-                statement.setString(2, jLabel1.getText());
-                statement.setInt(3, this.idPasien);
-                statement.setString(4, jLabel2.getText());
-                statement.setTimestamp(5, Timestamp.valueOf(jTextField1.getText()));
-                statement.setTimestamp(6, Timestamp.valueOf(jTextField4.getText()));     
+                statement.setInt(1, Integer.parseInt(jLabel4.getText()));
+                statement.setInt(2, Integer.parseInt(jLabel5.getText()));
+                statement.setTimestamp(3, Timestamp.valueOf(jTextField1.getText()));
+                statement.setTimestamp(4, Timestamp.valueOf(jTextField4.getText()));     
                 int rowsInserted = statement.executeUpdate();
 
                 if (rowsInserted > 0) {
+                    jLabel5.setText("()");     
+                    jLabel2.setText("Belum memilih");
+                    jLabel4.setText("()");     
+                    jLabel1.setText("Belum memilih");
                     JOptionPane.showMessageDialog(this, "Penjadwalan berhasil!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     JOptionPane.showMessageDialog(this, "Penjadwalan gagal!", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -445,10 +408,8 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Dokter sedang tidak tersedia pada waktu tersebut!", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Penjadwalan gagal!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Terjadi Error!\n\n"+e, "ERROR", JOptionPane.ERROR_MESSAGE);
         }
-
         populateTableJadwalPertemuan();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -459,6 +420,53 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        int selectedRow = jTable1.getSelectedRow();
+
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Klik pada jadwal yang ingin diselesaikan!", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int idDokter = (int) model.getValueAt(selectedRow, 1);
+        String namaDokter = (String) model.getValueAt(selectedRow, 2);
+        int idPasien = (int) model.getValueAt(selectedRow, 3);
+        String namaPasien = (String) model.getValueAt(selectedRow, 4);
+        Timestamp  waktuMulai = (Timestamp) model.getValueAt(selectedRow, 5);
+        Timestamp  waktuSelesai = (Timestamp) model.getValueAt(selectedRow, 6);
+
+        try {
+            String updateSql = "UPDATE datapasien SET status_pertemuan_dengan_dokter = 'sudah' WHERE id = ?";
+            PreparedStatement updateStatement = connection.prepareStatement(updateSql);
+            updateStatement.setInt(1, idPasien);
+            int rowsAffected = updateStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                String insertSql = "INSERT INTO history_pertemuan (iddokter, namadokter, idpasien, namapasien, mulai, selesai) VALUES (?, ?, ?, ?, ?, ?)";
+                PreparedStatement insertStatement = connection.prepareStatement(insertSql);
+                insertStatement.setInt(1, idDokter);
+                insertStatement.setString(2, namaDokter);
+                insertStatement.setInt(3, idPasien);   
+                insertStatement.setString(4, namaPasien);
+                insertStatement.setTimestamp(5, waktuMulai);                
+                insertStatement.setTimestamp(6, waktuSelesai);  
+                int insertedRows = insertStatement.executeUpdate();
+                insertStatement.close();
+                if (insertedRows > 0) {
+                    JOptionPane.showMessageDialog(this, "Pertemuan telah diselesaikan!\n\nTercatat di history pertemuan!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Gagal mencatat di history pertemuan!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+                populateTableJadwalPertemuan();
+            } else {
+                JOptionPane.showMessageDialog(this, "Pertemuan gagal diselesaikan!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                updateStatement.close();
+            }
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Terjadi error!\n\n" + e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void populateTableDokter() {
         try {
@@ -488,7 +496,11 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private void populateTablePasien() {
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM datapasien ORDER BY id");
+            ResultSet resultSet = statement.executeQuery("SELECT datapasien.* \n" +
+                                                         "FROM datapasien \n" +
+                                                         "LEFT JOIN jadwalpertemuan ON datapasien.id = jadwalpertemuan.idpasien\n" +
+                                                         "WHERE jadwalpertemuan.idpasien IS NULL AND datapasien.status_pertemuan_dengan_dokter = 'belum'\n" +
+                                                         "ORDER BY id;");
 
             DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
             model.setRowCount(0);
@@ -517,7 +529,19 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private void populateTableJadwalPertemuan() {
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM jadwalpertemuan ORDER BY id");
+            ResultSet resultSet = statement.executeQuery("SELECT \n" +
+                                                        "    jadwalpertemuan.id, \n" +
+                                                        "    jadwalpertemuan.idpasien, \n" +
+                                                        "    datapasien.namapasien, \n" +
+                                                        "    jadwalpertemuan.iddokter, \n" +
+                                                        "    datadokter.namadokter,\n" +
+                                                        "    jadwalpertemuan.mulai,\n" +
+                                                        "    jadwalpertemuan.selesai\n" +
+                                                        "FROM jadwalpertemuan\n" +
+                                                        "JOIN datadokter ON jadwalpertemuan.iddokter = datadokter.id\n" +
+                                                        "JOIN datapasien ON jadwalpertemuan.idpasien = datapasien.id\n" +
+                                                        "WHERE datapasien.status_pertemuan_dengan_dokter = 'belum'\n" +
+                                                        "ORDER BY jadwalpertemuan.id");
 
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             model.setRowCount(0);
@@ -564,6 +588,7 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
 
         return false;
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -571,6 +596,7 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
@@ -586,8 +612,6 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
