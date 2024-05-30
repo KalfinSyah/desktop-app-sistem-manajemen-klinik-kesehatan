@@ -59,17 +59,16 @@ CREATE TABLE `datapasien` (
   `keluhan` varchar(255) DEFAULT NULL,
   `bpjs` enum('IYA','TIDAK') NOT NULL,
   `waktukedatangan` datetime DEFAULT NULL,
-  `status_pemberian_obat` enum('belum','sudah') NOT NULL DEFAULT 'belum'
+  `status_pemberian_obat` enum('belum','sudah') NOT NULL DEFAULT 'belum',
+  `status_pertemuan_dengan_dokter` enum('belum','sudah') NOT NULL DEFAULT 'belum'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `datapasien`
 --
 
-INSERT INTO `datapasien` (`id`, `namapasien`, `usia`, `gender`, `keluhan`, `bpjs`, `waktukedatangan`, `status_pemberian_obat`) VALUES
-(7, 'Diana', 20, 'P', 'Pusing', 'IYA', '2024-05-25 02:59:39', 'sudah'),
-(8, 'Joni', 20, 'L', 'Pusing', 'TIDAK', '2024-05-25 03:12:12', 'sudah'),
-(9, 'Jack', 30, 'L', 'Sakit Gigi', 'TIDAK', '2024-05-30 07:31:45', 'belum');
+INSERT INTO `datapasien` (`id`, `namapasien`, `usia`, `gender`, `keluhan`, `bpjs`, `waktukedatangan`, `status_pemberian_obat`, `status_pertemuan_dengan_dokter`) VALUES
+(18, 'Jack', 20, 'L', 'Sakit Gigi', 'IYA', '2024-05-31 04:41:52', 'sudah', 'sudah');
 
 -- --------------------------------------------------------
 
@@ -96,8 +95,30 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id`, `idpasien`, `namapasien`, `keluhan`, `idobat`, `namaobat`, `waktupemberian`, `hargaobat`, `uangpasien`, `kembalian`, `bpjs`) VALUES
-(7, 7, 'Diana', 'Pusing', 2, 'Obat Pusing', '2024-05-24 20:11:50', 0, 100000, 100000, 'IYA'),
-(8, 8, 'Joni', 'Pusing', 2, 'Obat Pusing', '2024-05-24 20:13:52', 20000, 100000, 80000, 'TIDAK');
+(10, 18, 'Jack', 'Sakit Gigi', 1, 'Obat Sakit Gigi', '2024-05-30 22:24:42', 0, 0, 0, 'IYA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history_pertemuan`
+--
+
+CREATE TABLE `history_pertemuan` (
+  `id` int(11) NOT NULL,
+  `iddokter` int(11) DEFAULT NULL,
+  `namadokter` varchar(255) DEFAULT NULL,
+  `idpasien` int(11) DEFAULT NULL,
+  `namapasien` varchar(255) DEFAULT NULL,
+  `mulai` timestamp NOT NULL DEFAULT current_timestamp(),
+  `selesai` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `history_pertemuan`
+--
+
+INSERT INTO `history_pertemuan` (`id`, `iddokter`, `namadokter`, `idpasien`, `namapasien`, `mulai`, `selesai`) VALUES
+(2, 3, 'Dr. Ryan', 18, 'Jack', '2024-05-30 22:23:46', '2024-05-30 22:23:46');
 
 -- --------------------------------------------------------
 
@@ -108,12 +129,17 @@ INSERT INTO `history` (`id`, `idpasien`, `namapasien`, `keluhan`, `idobat`, `nam
 CREATE TABLE `jadwalpertemuan` (
   `id` int(11) NOT NULL,
   `iddokter` int(11) DEFAULT NULL,
-  `namadokter` varchar(255) DEFAULT NULL,
   `idpasien` int(11) DEFAULT NULL,
-  `namapasien` varchar(255) DEFAULT NULL,
   `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `jadwalpertemuan`
+--
+
+INSERT INTO `jadwalpertemuan` (`id`, `iddokter`, `idpasien`, `mulai`, `selesai`) VALUES
+(14, 3, 18, '2024-05-30 22:23:46', '2024-05-30 22:23:46');
 
 -- --------------------------------------------------------
 
@@ -125,7 +151,7 @@ CREATE TABLE `obat` (
   `id` int(11) NOT NULL,
   `namaobat` varchar(255) DEFAULT NULL,
   `stok` int(11) NOT NULL,
-  `harga` decimal(10,2) DEFAULT NULL
+  `harga` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -133,12 +159,14 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `namaobat`, `stok`, `harga`) VALUES
-(1, 'Obat Sakit Gigi', 100, 100000.00),
-(2, 'Obat Pusing', 98, 20000.00),
-(3, 'Obat Kolesterol', 100, 150000.00),
-(4, 'Obat Sakit Perut', 98, 30000.00),
-(5, 'Obat Sakit Mata', 100, 70000.00),
-(6, 'Obat Pegal Linu', 99, 70000.00);
+(1, 'Obat Sakit Gigi', 98, 100000),
+(2, 'Obat Pusing', 100, 20000),
+(3, 'Obat Kolesterol', 100, 150000),
+(4, 'Obat Sakit Perut', 100, 30000),
+(5, 'Obat Sakit Mata', 100, 70000),
+(6, 'Obat Pegal Linu', 100, 70000),
+(7, 'Obat Maag', 100, 50000),
+(8, 'Steroid', 100, 150000);
 
 -- --------------------------------------------------------
 
@@ -183,6 +211,12 @@ ALTER TABLE `history`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `history_pertemuan`
+--
+ALTER TABLE `history_pertemuan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jadwalpertemuan`
 --
 ALTER TABLE `jadwalpertemuan`
@@ -210,31 +244,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `datadokter`
 --
 ALTER TABLE `datadokter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `datapasien`
 --
 ALTER TABLE `datapasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `history_pertemuan`
+--
+ALTER TABLE `history_pertemuan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `jadwalpertemuan`
 --
 ALTER TABLE `jadwalpertemuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -257,3 +297,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
