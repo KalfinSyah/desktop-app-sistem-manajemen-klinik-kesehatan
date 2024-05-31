@@ -37,14 +37,6 @@ CREATE TABLE `datadokter` (
   `tipedokter` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `datadokter`
---
-
-INSERT INTO `datadokter` (`id`, `namadokter`, `tipedokter`) VALUES
-(1, 'Dr. Richard', 'Dokter Umum'),
-(3, 'Dr. Ryan', 'Dokter Spesialis Gigi');
-
 -- --------------------------------------------------------
 
 --
@@ -62,13 +54,6 @@ CREATE TABLE `datapasien` (
   `status_pemberian_obat` enum('belum','sudah') NOT NULL DEFAULT 'belum',
   `status_pertemuan_dengan_dokter` enum('belum','sudah') NOT NULL DEFAULT 'belum'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `datapasien`
---
-
-INSERT INTO `datapasien` (`id`, `namapasien`, `usia`, `gender`, `keluhan`, `bpjs`, `waktukedatangan`, `status_pemberian_obat`, `status_pertemuan_dengan_dokter`) VALUES
-(18, 'Jack', 20, 'L', 'Sakit Gigi', 'IYA', '2024-05-31 04:41:52', 'sudah', 'sudah');
 
 -- --------------------------------------------------------
 
@@ -90,13 +75,6 @@ CREATE TABLE `history` (
   `bpjs` enum('IYA','TIDAK') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `history`
---
-
-INSERT INTO `history` (`id`, `idpasien`, `namapasien`, `keluhan`, `idobat`, `namaobat`, `waktupemberian`, `hargaobat`, `uangpasien`, `kembalian`, `bpjs`) VALUES
-(10, 18, 'Jack', 'Sakit Gigi', 1, 'Obat Sakit Gigi', '2024-05-30 22:24:42', 0, 0, 0, 'IYA');
-
 -- --------------------------------------------------------
 
 --
@@ -113,13 +91,6 @@ CREATE TABLE `history_pertemuan` (
   `selesai` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `history_pertemuan`
---
-
-INSERT INTO `history_pertemuan` (`id`, `iddokter`, `namadokter`, `idpasien`, `namapasien`, `mulai`, `selesai`) VALUES
-(2, 3, 'Dr. Ryan', 18, 'Jack', '2024-05-30 22:23:46', '2024-05-30 22:23:46');
-
 -- --------------------------------------------------------
 
 --
@@ -130,16 +101,8 @@ CREATE TABLE `jadwalpertemuan` (
   `id` int(11) NOT NULL,
   `iddokter` int(11) DEFAULT NULL,
   `idpasien` int(11) DEFAULT NULL,
-  `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `jadwalpertemuan`
---
-
-INSERT INTO `jadwalpertemuan` (`id`, `iddokter`, `idpasien`, `mulai`, `selesai`) VALUES
-(14, 3, 18, '2024-05-30 22:23:46', '2024-05-30 22:23:46');
 
 -- --------------------------------------------------------
 
@@ -159,7 +122,7 @@ CREATE TABLE `obat` (
 --
 
 INSERT INTO `obat` (`id`, `namaobat`, `stok`, `harga`) VALUES
-(1, 'Obat Sakit Gigi', 98, 100000),
+(1, 'Obat Sakit Gigi', 100, 100000),
 (2, 'Obat Pusing', 100, 20000),
 (3, 'Obat Kolesterol', 100, 150000),
 (4, 'Obat Sakit Perut', 100, 30000),
