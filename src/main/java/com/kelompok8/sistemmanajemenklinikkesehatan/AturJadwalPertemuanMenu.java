@@ -385,28 +385,24 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            if (isDoctorAvailable(Integer.parseInt(jLabel4.getText()), jTextField1.getText(), jTextField4.getText())) {
-                String sql = "INSERT INTO jadwalpertemuan (iddokter, idpasien, mulai, selesai) VALUES (?, ?, ?, ?)";
-                PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setInt(1, Integer.parseInt(jLabel4.getText()));
-                statement.setInt(2, Integer.parseInt(jLabel5.getText()));
-                statement.setTimestamp(3, Timestamp.valueOf(jTextField1.getText()));
-                statement.setTimestamp(4, Timestamp.valueOf(jTextField4.getText()));     
-                int rowsInserted = statement.executeUpdate();
+            String sql = "INSERT INTO jadwalpertemuan (iddokter, idpasien, mulai, selesai) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, Integer.parseInt(jLabel4.getText()));
+            statement.setInt(2, Integer.parseInt(jLabel5.getText()));
+            statement.setTimestamp(3, Timestamp.valueOf(jTextField1.getText()));
+            statement.setTimestamp(4, Timestamp.valueOf(jTextField4.getText()));     
+            int rowsInserted = statement.executeUpdate();
 
-                if (rowsInserted > 0) {
-                    jLabel5.setText("()");     
-                    jLabel2.setText("Belum memilih");
-                    jLabel4.setText("()");     
-                    jLabel1.setText("Belum memilih");
-                    JOptionPane.showMessageDialog(this, "Penjadwalan berhasil!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "Penjadwalan gagal!", "ERROR", JOptionPane.ERROR_MESSAGE);
-                }
-                statement.close();
+            if (rowsInserted > 0) {
+                jLabel5.setText("()");     
+                jLabel2.setText("Belum memilih");
+                jLabel4.setText("()");     
+                jLabel1.setText("Belum memilih");
+                JOptionPane.showMessageDialog(this, "Penjadwalan berhasil!", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(this, "Dokter sedang tidak tersedia pada waktu tersebut!", "ERROR", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Penjadwalan gagal!", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+            statement.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Terjadi Error!\n\n"+e, "ERROR", JOptionPane.ERROR_MESSAGE);
         }
@@ -564,30 +560,6 @@ public class AturJadwalPertemuanMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }  
-    
-    private boolean isDoctorAvailable(int doctorId, String startTimestamp, String endTimestamp) {
-        try {
-            String sql = "SELECT COUNT(*) FROM jadwalpertemuan WHERE iddokter = ? AND ((mulai >= ? AND mulai < ?) OR (selesai > ? AND selesai <= ?))";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, doctorId);
-            statement.setTimestamp(2, Timestamp.valueOf(startTimestamp));
-            statement.setTimestamp(3, Timestamp.valueOf(endTimestamp));
-            statement.setTimestamp(4, Timestamp.valueOf(startTimestamp));
-            statement.setTimestamp(5, Timestamp.valueOf(endTimestamp));
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                int count = resultSet.getInt(1);
-                return count == 0;
-            }
-
-            statement.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
