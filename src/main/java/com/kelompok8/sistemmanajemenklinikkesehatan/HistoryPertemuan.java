@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class HistoryPertemuan extends javax.swing.JFrame {
     private Connection connection;
-    
+    private String username;
     public HistoryPertemuan(Connection connection) {
         initComponents();
         this.connection = connection;
@@ -22,7 +22,18 @@ public class HistoryPertemuan extends javax.swing.JFrame {
         
         populateTable();
     }
-
+    
+    public HistoryPertemuan(Connection connection, String username) {
+        initComponents();
+        this.connection = connection;
+        setTitle("HISTORY PERTEMUAN");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        this.username = username;
+        populateTable();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -33,13 +44,17 @@ public class HistoryPertemuan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setText("KEMBALI KE MAIN MENU");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -66,6 +81,7 @@ public class HistoryPertemuan extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,8 +111,13 @@ public class HistoryPertemuan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        new MainMenu(this.connection);
+        if (this.username != "admin") {
+            dispose();
+            new MainMenu(this.connection, this.username);
+        } else {
+            dispose();
+            new MainMenu(this.connection);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private void populateTable() {
