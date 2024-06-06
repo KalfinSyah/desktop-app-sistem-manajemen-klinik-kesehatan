@@ -113,12 +113,12 @@ public class HistoryPelayanan extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (this.username != "admin") {
-            dispose();
-            new MainMenu(this.connection, this.username);
-        } else {
+        if (this.username == "admin") {
             dispose();
             new MainMenu(this.connection);
+        } else {
+            dispose();
+            new MainMenu(this.connection, this.username);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

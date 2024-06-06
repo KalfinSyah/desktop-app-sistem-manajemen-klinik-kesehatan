@@ -132,7 +132,11 @@ public class LoginForm extends javax.swing.JFrame {
                 resultSet.close();
                 statement.close();
                 dispose();
-                new MainMenu(this.connection, username);
+                if (username != "admin") {
+                    new MainMenu(this.connection, username);
+                } else {
+                    new MainMenu(this.connection);
+                }
             } else {
                 resultSet.close();
                 statement.close();

@@ -194,12 +194,12 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        if (this.username != "admin") {
-            dispose();
-            new HistoryPelayanan(this.connection, this.username);
-        } else {
+        if (this.username == "admin") {
             dispose();
             new HistoryPelayanan(this.connection);
+        } else {
+            dispose();
+            new HistoryPelayanan(this.connection, this.username);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -209,12 +209,12 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        if (this.username != "admin") {
-            dispose();
-            new HistoryPertemuan(this.connection, this.username);
-        } else {
+        if (this.username == "admin") {
             dispose();
             new HistoryPertemuan(this.connection);
+        } else {
+            dispose();
+            new HistoryPertemuan(this.connection, this.username);
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
