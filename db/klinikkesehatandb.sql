@@ -101,7 +101,8 @@ CREATE TABLE `jadwalpertemuan` (
   `id` int(11) NOT NULL,
   `iddokter` int(11) DEFAULT NULL,
   `idpasien` int(11) DEFAULT NULL,
-  `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
