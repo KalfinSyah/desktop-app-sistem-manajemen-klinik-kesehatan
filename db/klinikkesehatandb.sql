@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: May 30, 2024 at 05:03 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -16,26 +7,11 @@ CREATE DATABASE IF NOT EXISTS klinikkesehatandb;
 USE klinikkesehatandb;
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `klinikkesehatandb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `datadokter`
---
-
 CREATE TABLE `datadokter` (
   `id` int(11) NOT NULL,
   `namadokter` varchar(255) NOT NULL,
   `tipedokter` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -53,7 +29,7 @@ CREATE TABLE `datapasien` (
   `waktukedatangan` datetime DEFAULT NULL,
   `status_pemberian_obat` enum('belum','sudah') NOT NULL DEFAULT 'belum',
   `status_pertemuan_dengan_dokter` enum('belum','sudah') NOT NULL DEFAULT 'belum'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -73,7 +49,7 @@ CREATE TABLE `history` (
   `uangpasien` float DEFAULT NULL,
   `kembalian` float DEFAULT NULL,
   `bpjs` enum('IYA','TIDAK') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -89,7 +65,7 @@ CREATE TABLE `history_pertemuan` (
   `namapasien` varchar(255) DEFAULT NULL,
   `mulai` timestamp NOT NULL DEFAULT current_timestamp(),
   `selesai` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -103,7 +79,7 @@ CREATE TABLE `jadwalpertemuan` (
   `idpasien` int(11) DEFAULT NULL,
   `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -116,7 +92,7 @@ CREATE TABLE `obat` (
   `namaobat` varchar(255) DEFAULT NULL,
   `stok` int(11) NOT NULL,
   `harga` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `obat`
@@ -142,7 +118,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `users`
