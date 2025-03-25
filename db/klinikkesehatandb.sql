@@ -35,7 +35,7 @@ CREATE TABLE `datadokter` (
   `id` int(11) NOT NULL,
   `namadokter` varchar(255) NOT NULL,
   `tipedokter` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE `datapasien` (
   `waktukedatangan` datetime DEFAULT NULL,
   `status_pemberian_obat` enum('belum','sudah') NOT NULL DEFAULT 'belum',
   `status_pertemuan_dengan_dokter` enum('belum','sudah') NOT NULL DEFAULT 'belum'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE `history` (
   `uangpasien` float DEFAULT NULL,
   `kembalian` float DEFAULT NULL,
   `bpjs` enum('IYA','TIDAK') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `history_pertemuan` (
   `namapasien` varchar(255) DEFAULT NULL,
   `mulai` timestamp NOT NULL DEFAULT current_timestamp(),
   `selesai` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,7 @@ CREATE TABLE `jadwalpertemuan` (
   `idpasien` int(11) DEFAULT NULL,
   `mulai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,7 @@ CREATE TABLE `obat` (
   `namaobat` varchar(255) DEFAULT NULL,
   `stok` int(11) NOT NULL,
   `harga` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `obat`
@@ -142,7 +142,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Dumping data for table `users`
