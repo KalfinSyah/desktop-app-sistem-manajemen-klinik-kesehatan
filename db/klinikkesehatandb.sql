@@ -13,7 +13,6 @@ CREATE TABLE `datadokter` (
   `tipedokter` varchar(255) DEFAULT NULL
 );
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `datapasien`
@@ -31,7 +30,6 @@ CREATE TABLE `datapasien` (
   `status_pertemuan_dengan_dokter` enum('belum','sudah') NOT NULL DEFAULT 'belum'
 );
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `history`
@@ -51,7 +49,6 @@ CREATE TABLE `history` (
   `bpjs` enum('IYA','TIDAK') DEFAULT NULL
 );
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `history_pertemuan`
@@ -67,7 +64,6 @@ CREATE TABLE `history_pertemuan` (
   `selesai` timestamp NOT NULL DEFAULT current_timestamp()
 );
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `jadwalpertemuan`
@@ -81,7 +77,6 @@ CREATE TABLE `jadwalpertemuan` (
   `selesai` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `obat`
@@ -108,7 +103,6 @@ INSERT INTO `obat` (`id`, `namaobat`, `stok`, `harga`) VALUES
 (7, 'Obat Maag', 100, 50000),
 (8, 'Steroid', 100, 150000);
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
